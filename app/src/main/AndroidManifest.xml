@@ -51,6 +51,7 @@
         <activity android:name=".activity.ConstraintAnimationActivity" />
         <activity android:name=".activity.RadioGroupTestActivity" />
         <activity android:name=".activity.TextToSpeechActivity" />
+        <activity android:name=".activity.DownLoadActivity" />
         <!-- push 应用定义消息 receiver 声明 -->
         <receiver android:name="com.liuleilei.macbook.mydemo.receiver.MyPushMsgReceiver">
             <intent-filter>
