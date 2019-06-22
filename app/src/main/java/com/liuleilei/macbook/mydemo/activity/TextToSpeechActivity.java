@@ -44,7 +44,7 @@ public class TextToSpeechActivity extends AppCompatActivity implements TextToSpe
     }
 
     private void initTextSpeech() {
-         textToSpeech = new TextToSpeech(getApplicationContext(), this);
+        textToSpeech = new TextToSpeech(getApplicationContext(), this);
         list = textToSpeech.getEngines();
         Set<Locale> localeSet = textToSpeech.getAvailableLanguages();
         Set<Voice> voiceSet = textToSpeech.getVoices();
@@ -62,7 +62,7 @@ public class TextToSpeechActivity extends AppCompatActivity implements TextToSpe
                 //textToSpeech.speak(textContent.getText().toString(), TextToSpeech.QUEUE_ADD, null);
                 startActivity(new Intent("com.android.settings.TTS_SETTINGS"));
             } else {
-               textToSpeech.speak(textContent.getText().toString(), TextToSpeech.QUEUE_ADD, null);
+                textToSpeech.speak(textContent.getText().toString(), TextToSpeech.QUEUE_ADD, null);
             }
         }
     }
@@ -75,6 +75,27 @@ public class TextToSpeechActivity extends AppCompatActivity implements TextToSpe
                 break;
             default:
                 break;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        destroy();
+
+    }
+
+    public void shutUp() {
+        if (textToSpeech != null) {
+            textToSpeech.stop();
+        }
+    }
+
+    public void destroy() {
+        if (textToSpeech != null) {
+            shutUp();
+            textToSpeech.shutdown();
+            textToSpeech = null;
         }
     }
 }
