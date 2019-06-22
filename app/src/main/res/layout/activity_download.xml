@@ -1,9 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:background="@color/colorAccent"/>
+    android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <RelativeLayout
+        android:id="@+id/_rl_upload"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#f6780f"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/_tv_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="下载"
+            android:textColor="#292f36"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/_pb_upload"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:progressDrawable="@drawable/custom_progress"
+        app:layout_constraintTop_toBottomOf="@id/_rl_upload" />
+    <RelativeLayout
+        android:id="@+id/_rl_upload_async_tas"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#f6780f"
+        app:layout_constraintTop_toBottomOf="@id/_pb_upload"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/_tv_upload_async_tas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="async下载"
+            android:textColor="#292f36"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/_pb_upload_async_tas"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:progressDrawable="@drawable/custom_progress"
+        app:layout_constraintTop_toBottomOf="@id/_rl_upload_async_tas" />
 </android.support.constraint.ConstraintLayout>
