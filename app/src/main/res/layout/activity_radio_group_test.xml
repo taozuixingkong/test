@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/radiogroup_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#ffffff">
+            <RadioButton
+                android:id="@+id/tab_home"
+                style="@style/DongyueTabStyle"
+                android:background="#ffffff"
+                android:drawableTop="@drawable/tab_home_selector"
+                android:text="首页" />
+
+            <RadioButton
+                style="@style/DongyueTabStyle"
+                android:text="课程"
+                android:id="@+id/tab_course"
+                android:drawableTop="@drawable/tab_home_selector"/>
+
+            <RadioButton
+                style="@style/DongyueTabStyle"
+                android:text="作业"
+                android:id="@+id/tab_homework"
+                android:drawableTop="@drawable/tab_home_selector"/>
+
+            <RadioButton
+                style="@style/DongyueTabStyle"
+                android:text="我"
+                android:id="@+id/tab_me"
+                android:drawableTop="@drawable/tab_home_selector"/>
+        </RadioGroup>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
