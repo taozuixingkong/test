@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerInterface
         list.add("radioGroup");
         list.add("tts");
         list.add("下载");
-        list.add("分发");
+        list.add("https");
         list.add("分发");
         list.add("分发");
     }
@@ -101,6 +101,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerInterface
                 break;
             case "下载":
                 DownLoadActivity.start(this);
+                break;
+            case "https":
+                 HttpUrlActivity.start(this);
                 break;
             default:
                 break;
