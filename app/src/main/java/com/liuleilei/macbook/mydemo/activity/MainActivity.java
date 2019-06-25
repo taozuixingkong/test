@@ -13,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
+import com.liuleilei.macbook.basedispose.util.ToastUtil;
 import com.liuleilei.macbook.mydemo.R;
 import com.liuleilei.macbook.mydemo.adapter.MainActivityAdapter;
 import com.liuleilei.macbook.mydemo.inter.RecyclerInterface;
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerInterface
 
     @Override
     public void onItemListener(int position) {
-        Toast.makeText(this, list.get(position), Toast.LENGTH_SHORT).show();
+        ToastUtil.showToastShort(this,list.get(position));
         switch (list.get(position)) {
             case "分发":
                 break;

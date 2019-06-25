@@ -18,6 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.liuleilei.macbook.basedispose.util.ToastUtil;
 import com.liuleilei.macbook.mydemo.R;
 
 import java.io.File;
@@ -31,6 +32,7 @@ import java.net.URL;
 /**
  * create by liu
  * on2019/6/22
+ * asyncTask
  */
 public class DownLoadActivity extends AppCompatActivity implements View.OnClickListener {
     private static final int FILE_SIZE = 0;
@@ -165,7 +167,7 @@ public class DownLoadActivity extends AppCompatActivity implements View.OnClickL
         }).start();
     }
 
-     class  DownloadAsyncTas extends AsyncTask<String, Integer, Integer> {
+    class DownloadAsyncTas extends AsyncTask<String, Integer, Integer> {
 
         @Override
         protected Integer doInBackground(String... strings) {
@@ -191,7 +193,7 @@ public class DownLoadActivity extends AppCompatActivity implements View.OnClickL
                     int numread = -1;
                     int count = 0;
                     byte[] buffer = new byte[1024];
-                    while ((numread = is.read(buffer))!= -1) {
+                    while ((numread = is.read(buffer)) != -1) {
                         count += numread;
                         fos.write(buffer, 0, numread);
                         // 计算进度条的当前位置
@@ -226,8 +228,8 @@ public class DownLoadActivity extends AppCompatActivity implements View.OnClickL
         @Override
         protected void onPostExecute(Integer integer) {
             super.onPostExecute(integer);
-            if(integer == DOWNLOAD_SUCCESS){
-                Toast.makeText(DownLoadActivity.this,"下载完成",Toast.LENGTH_SHORT).show();
+            if (integer == DOWNLOAD_SUCCESS) {
+                ToastUtil.showToastShort(DownLoadActivity.this, "下载完成");
             }
         }
     }

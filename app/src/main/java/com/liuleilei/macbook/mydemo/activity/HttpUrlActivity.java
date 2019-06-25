@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kaopiz.kprogresshud.KProgressHUD;
+import com.liuleilei.macbook.basedispose.util.ToastUtil;
 import com.liuleilei.macbook.mydemo.R;
 
 import org.json.JSONException;
@@ -122,7 +123,7 @@ public class HttpUrlActivity extends AppCompatActivity implements View.OnClickLi
                     HttpUrlActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(HttpUrlActivity.this,"success",Toast.LENGTH_SHORT).show();
+                            ToastUtil.showToastShort(HttpUrlActivity.this,"success");
                         }
                     });
                 } catch (IOException e) {
