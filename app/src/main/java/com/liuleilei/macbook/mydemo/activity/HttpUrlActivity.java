@@ -2,10 +2,16 @@ package com.liuleilei.macbook.mydemo.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -136,4 +142,40 @@ public class HttpUrlActivity extends AppCompatActivity implements View.OnClickLi
             }
         }).start();
     }
+
+
+
+    public void showBottomToCenterPopUpWindow(View view) {
+        ToastUtil.showToastShort(this, "haha");
+        View contentView = LayoutInflater.from(this).inflate(R.layout.modal_test, null);
+        PopupWindow popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        popupWindow.showAtLocation(view, Gravity.BOTTOM, 0, 0);
+
+    }
+    /*
+    public void showBottomToCenterModal() {
+        ToastUtil.showToastShort(this, "haha");
+        View contentView = LayoutInflater.from(this).inflate(R.layout.modal_test, null);
+        contentView.setBackgroundColor(Color.RED);
+        Modal modal = new Modal(this);
+        modal.show(contentView, ModalDirection.FROM_BOTTOM, true,true,0, 0,
+                GlobalManager.windowHeight, getWindow().getDecorView().getHeight() / 2 - DensityUtil.dp2px(200)/2, 1, 1, 1, 1);
+        modal.getViewTreeObserver().addOnPreDrawListener(
+                new ViewTreeObserver.OnPreDrawListener() {
+
+                    @Override
+                    public boolean onPreDraw() {
+                        modal.getViewTreeObserver().removeOnPreDrawListener(this);
+                        modal.getWidth(); // 获取宽度
+                        modal.getHeight(); // 获取高度
+                        return true;
+                    }
+                });
+        int decorViewHeight = getWindow().getDecorView().getHeight();
+        int _navigationBarHeight = _navigationBar.getHeight();
+        int contentViewHeight  = _contentView.getHeight();
+        //int ActivityHeight = this.getDelegate().s
+        int sattusBarheight = getResources().getDimensionPixelSize(getResources().getIdentifier("status_bar_height", "dimen", "android"));
+    }
+    */
 }
