@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 28
@@ -28,4 +29,8 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation files('libs/MiPush_SDK_Client_3_6_18.jar')
     implementation project(':baseDispose')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }

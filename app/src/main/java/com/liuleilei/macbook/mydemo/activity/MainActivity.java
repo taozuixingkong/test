@@ -17,6 +17,7 @@ import com.liuleilei.macbook.basedispose.util.ToastUtil;
 import com.liuleilei.macbook.mydemo.R;
 import com.liuleilei.macbook.mydemo.adapter.MainActivityAdapter;
 import com.liuleilei.macbook.mydemo.inter.RecyclerInterface;
+import com.liuleilei.macbook.mydemo.kotlinactivity.ConstraintLayoutActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerInterface
         list.add("tts");
         list.add("下载");
         list.add("https");
-        list.add("分发");
+        list.add("约束布局");
         list.add("分发");
     }
 
@@ -106,6 +107,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerInterface
             case "https":
                  HttpUrlActivity.start(this);
                 break;
+            case "约束布局":
+                ConstraintLayoutActivity.Companion.start(this);
             default:
                 break;
         }
