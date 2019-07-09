@@ -32,4 +32,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     api 'com.kaopiz:kprogresshud:1.2.0'
+    api 'com.wuhenzhizao:titlebar:1.1.4'
+    api 'com.android.support.constraint:constraint-layout:1.1.3'
 }
