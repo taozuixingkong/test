@@ -1,8 +1,10 @@
 package com.liuleilei.macbook.mydemo.activity;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.Voice;
 import android.support.annotation.Nullable;
@@ -25,6 +27,7 @@ public class TextToSpeechActivity extends AppCompatActivity implements TextToSpe
     private List<TextToSpeech.EngineInfo> list = new ArrayList<>();
     private TextView textContent;
     private TextView play;
+    private TextView set;
     TextToSpeech textToSpeech;
 
     @Override
@@ -33,7 +36,9 @@ public class TextToSpeechActivity extends AppCompatActivity implements TextToSpe
         setContentView(R.layout.activity_text_to_speech);
         textContent = findViewById(R.id.text_content);
         play = findViewById(R.id.play);
+        set = findViewById(R.id.set);
         play.setOnClickListener(this);
+        set.setOnClickListener(this);
 
     }
 
@@ -72,6 +77,23 @@ public class TextToSpeechActivity extends AppCompatActivity implements TextToSpe
         switch (v.getId()) {
             case R.id.play:
                 initTextSpeech();
+                break;
+            case R.id.set:
+                String system = android.os.Build.BRAND;
+
+                Intent intent = new Intent();
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                ComponentName comp = null;
+                comp = ComponentName
+                        .unflattenFromString("com.meizu.safe/.permission.SmartBGActivity");
+                intent.setComponent(comp);
+
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {//抛出异常就直接打开设置页面
+                    intent = new Intent(Settings.ACTION_SETTINGS);
+                    startActivity(intent);
+                }
                 break;
             default:
                 break;

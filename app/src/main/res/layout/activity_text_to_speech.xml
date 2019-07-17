@@ -11,16 +11,27 @@
         android:background="@color/colorAccent"
         android:text="美团和饿了么是大家日常生活中最常用的两款外卖软件，
         可是最近却上演了一起现实版的“无间道”。据网易山东消息，
-        山东淄博市场监管部门对美团外卖调查时，发现相关工作人员的电脑中存有大量饿了么非公开的核心商业数据。"/>
+        山东淄博市场监管部门对美团外卖调查时，发现相关工作人员的电脑中存有大量饿了么非公开的核心商业数据。" />
 
     <TextView
         android:id="@+id/play"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:text="播放"
-        android:gravity="center"
         android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="播放"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/set"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="set"
+        app:layout_constraintBottom_toTopOf="@id/play"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

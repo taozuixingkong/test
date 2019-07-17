@@ -66,7 +66,7 @@ public class DemoMessageReceiver extends PushMessageReceiver {
         Log.v(TAG,
                 "onReceivePassThroughMessage is called. " + message.toString());
         String log = context.getString(R.string.recv_passthrough_message, message.getContent());
-        MainActivity.logList.add(0, getSimpleDate() + " " + log);
+        MainActivity.Companion.getLogList().add(0, getSimpleDate() + " " + log);
 
         if (!TextUtils.isEmpty(message.getTopic())) {
             mTopic = message.getTopic();
@@ -84,7 +84,7 @@ public class DemoMessageReceiver extends PushMessageReceiver {
         Log.v(TAG,
                 "onNotificationMessageClicked is called. " + message.toString());
         String log = context.getString(R.string.click_notification_message, message.getContent());
-        MainActivity.logList.add(0, getSimpleDate() + " " + log);
+        MainActivity.Companion.getLogList().add(0, getSimpleDate() + " " + log);
 
         if (!TextUtils.isEmpty(message.getTopic())) {
             mTopic = message.getTopic();
@@ -104,7 +104,7 @@ public class DemoMessageReceiver extends PushMessageReceiver {
         Log.v(TAG,
                 "onNotificationMessageArrived is called. " + message.toString());
         String log = context.getString(R.string.arrive_notification_message, message.getContent());
-        MainActivity.logList.add(0, getSimpleDate() + " " + log);
+        MainActivity.Companion.getLogList().add(0, getSimpleDate() + " " + log);
 
         if (!TextUtils.isEmpty(message.getTopic())) {
             mTopic = message.getTopic();
@@ -186,7 +186,7 @@ public class DemoMessageReceiver extends PushMessageReceiver {
         } else {
             log = message.getReason();
         }
-        MainActivity.logList.add(0, getSimpleDate() + "    " + log);
+        MainActivity.Companion.getLogList().add(0, getSimpleDate() + "    " + log);
 
         Message msg = Message.obtain();
         msg.obj = log;
