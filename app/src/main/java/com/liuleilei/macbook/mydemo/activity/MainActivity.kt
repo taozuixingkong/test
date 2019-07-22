@@ -13,6 +13,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.Toast
+import com.liuleilei.macbook.basedispose.base.BaseActivity
 
 import com.liuleilei.macbook.basedispose.util.ToastUtil
 import com.liuleilei.macbook.mydemo.R
@@ -23,14 +24,14 @@ import com.liuleilei.macbook.mydemo.kotlinactivity.ConstraintLayoutActivity
 import java.util.ArrayList
 import java.util.concurrent.CopyOnWriteArrayList
 
-class MainActivity : AppCompatActivity(), RecyclerInterface {
+class MainActivity : BaseActivity(), RecyclerInterface {
 
     private var myRecyclerView: RecyclerView? = null
     private var list: MutableList<String>? = null
     private var mainActivityAdapter: MainActivityAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        addView(R.layout.activity_main)
         myRecyclerView = findViewById(R.id.my_recycler_view)
         initData()
         initEvents()
@@ -46,7 +47,7 @@ class MainActivity : AppCompatActivity(), RecyclerInterface {
         list!!.add("下载")
         list!!.add("https")
         list!!.add("约束布局")
-        list!!.add("分发")
+        list!!.add("webView")
     }
 
     private fun initEvents() {
@@ -91,6 +92,7 @@ class MainActivity : AppCompatActivity(), RecyclerInterface {
             "下载" -> DownLoadActivity.start(this)
             "https" -> HttpUrlActivity.start(this)
             "约束布局" -> ConstraintLayoutActivity.start(this)
+            "webView" -> WebViewActivity.start(this)
             else -> {
             }
         }

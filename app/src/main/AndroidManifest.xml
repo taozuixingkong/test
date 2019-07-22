@@ -41,7 +41,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,6 +54,8 @@
         <activity android:name=".activity.DownLoadActivity" />
         <activity android:name=".activity.HttpUrlActivity" />
         <activity android:name=".kotlinactivity.ConstraintLayoutActivity" />
+        <activity android:name=".activity.WebViewActivity" />
+        <activity android:name=".activity.MainActivity" />
         <!-- push 应用定义消息 receiver 声明 -->
         <receiver android:name="com.liuleilei.macbook.mydemo.receiver.MyPushMsgReceiver">
             <intent-filter>
