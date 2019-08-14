@@ -24,8 +24,9 @@ public class ExampleUnitTest {
     }
     @Test
     public void forTest(){
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 0; i++) {
             int j = i;
+            System.out.println("j="+j);
         }
     }
 }

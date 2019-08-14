@@ -57,5 +57,5 @@ dependencies {
     api "com.squareup.retrofit2:converter-gson:$retrofit2_converter_gson_version"
     //okhttp
     api "com.squareup.okhttp3:logging-interceptor:$okhttp3_logging_version"
-
+    api 'com.github.QQzs:BorderView:1.0.6'
 }

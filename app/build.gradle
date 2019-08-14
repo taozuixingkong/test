@@ -59,6 +59,8 @@ dependencies {
     implementation files('libs/MiPush_SDK_Client_3_6_18.jar')
     implementation project(':baseDispose')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+
 }
 repositories {
     mavenCentral()

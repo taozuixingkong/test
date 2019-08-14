@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.liuleilei.macbook.basedispose"/>
+    package="com.liuleilei.macbook.basedispose">
+    <!-- 刘海屏支持 -->
+    <meta-data android:name="android.max_aspect"  android:value="2.4"/>
+    <meta-data android:name="android.notch_support" android:value="true"/>
+</manifest>
