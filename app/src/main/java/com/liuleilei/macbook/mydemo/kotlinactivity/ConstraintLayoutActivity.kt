@@ -16,7 +16,6 @@ class ConstraintLayoutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_constraint_layout)
     }
-
     companion object {
         fun start(context: Context) {
             val starter = Intent(context, ConstraintLayoutActivity::class.java)

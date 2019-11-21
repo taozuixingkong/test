@@ -5,11 +5,6 @@ package com.liuleilei.macbook.basedispose.util;
  * on2019/8/5
  */
 import java.util.regex.Pattern;
-
-/**
- * 常用正则表达是总结
- * Created by 邹峰立 on 2017/7/13.
- */
 public class RegularExpressionUtil {
     // 邮箱验证
     public static boolean isEmail(String email) {

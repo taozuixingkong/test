@@ -69,7 +69,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     protected void setStatusBarColor(@ColorInt int color) {
         setStatusBarColor(color, StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA);
     }
-
     /**
      * 设置状态栏颜色
      *
@@ -108,5 +107,11 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
      */
     public void onGoBack() {
         finish();
+    }
+    /**
+     * 标题
+     */
+    public void setTitleTextView(String titleTextView){
+        this.titleTextView.setText(titleTextView);
     }
 }

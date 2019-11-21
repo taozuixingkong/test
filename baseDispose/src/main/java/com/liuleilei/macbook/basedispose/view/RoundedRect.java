@@ -74,7 +74,6 @@ public class RoundedRect extends RelativeLayout {
         _borderColor = Color.parseColor("#00000000");
         _borderWidth = 0;
         _backgroundColor = Color.parseColor("#00000000");
-        ;
         init();
     }
 
@@ -224,8 +223,11 @@ public class RoundedRect extends RelativeLayout {
 
     private void drawPath(Path path) {
         int totalWidth = getWidth();
+
         int totalHeight = getHeight();
+
         float borderHalfWidth = (float) _borderWidth / 2;
+
         path.reset();
         RectF drawingRect = new RectF(borderHalfWidth, borderHalfWidth, totalWidth - borderHalfWidth, totalHeight - borderHalfWidth);
         RectF topLeftArcBound = new RectF();
@@ -248,15 +250,6 @@ public class RoundedRect extends RelativeLayout {
         path.arcTo(bottomLeftArcBound, 90, 90);
         path.lineTo(drawingRect.left, drawingRect.top + _leftTop);
         path.arcTo(topLeftArcBound, 180, 90);
-
-//        path.lineTo(totalWidth - _rightTop - borderHalfWidth, borderHalfWidth);
-//        path.quadTo(totalWidth - borderHalfWidth, borderHalfWidth, totalWidth - borderHalfWidth, _rightTop + borderHalfWidth);
-//        path.lineTo(totalWidth - borderHalfWidth,totalHeight - _rightBottom - borderHalfWidth);
-//        path.quadTo(totalWidth - borderHalfWidth, totalHeight - borderHalfWidth, totalWidth - _rightBottom - borderHalfWidth, totalHeight - borderHalfWidth);
-//        path.lineTo(_leftBottom + borderHalfWidth, totalHeight - borderHalfWidth);
-//        path.quadTo(borderHalfWidth, totalHeight - borderHalfWidth, borderHalfWidth, totalHeight - _leftBottom - borderHalfWidth);
-//        path.lineTo(borderHalfWidth, _leftTop + borderHalfWidth);
-//        path.quadTo(borderHalfWidth, borderHalfWidth, _leftTop + borderHalfWidth, borderHalfWidth);
         path.close();
     }
 

@@ -67,8 +67,6 @@ public class DownLoadActivity extends AppCompatActivity implements View.OnClickL
                     break;
             }
         }
-
-        ;
     };
 
     @Override
