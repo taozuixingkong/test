@@ -13,6 +13,7 @@ import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.youngkaaa.ycircleview.CircleView;
 import com.liuleilei.macbook.basedispose.base.BaseActivity;
 import com.liuleilei.macbook.basedispose.util.ToastUtil;
 import com.liuleilei.macbook.mydemo.R;
@@ -41,7 +42,7 @@ public class WebViewActivity extends BaseActivity implements View.OnClickListene
         setStatusBarColor(Color.WHITE,0);
         refreshImageView = findViewById(R.id.refresh_image_view);
         webView = findViewById(R.id.webView);
-
+       // CircleView
         initWebView();
         initEvent();
 

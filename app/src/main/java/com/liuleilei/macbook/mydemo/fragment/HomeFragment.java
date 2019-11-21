@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.liuleilei.macbook.mydemo.R;
+import com.liuleilei.macbook.mydemo.activity.ScrollingActivity;
 import com.liuleilei.macbook.mydemo.adapter.MainActivityAdapter;
 import com.liuleilei.macbook.mydemo.inter.RecyclerInterface;
 
@@ -81,6 +82,7 @@ public class HomeFragment extends Fragment implements RecyclerInterface {
         });
         list.clear();
         list.add("toast");
+        list.add("ScrollingActivity");
         mainActivityAdapter = new MainActivityAdapter(getContext(), list);
         myRecyclerView.setAdapter(mainActivityAdapter);
         mainActivityAdapter.setRecyclerInterface(this);
@@ -92,6 +94,9 @@ public class HomeFragment extends Fragment implements RecyclerInterface {
         switch (list.get(position)) {
             case "toast":
                 Toasty.error(getContext(), "success").show();
+                break;
+            case "ScrollingActivity":
+                ScrollingActivity.start(getContext());
                 break;
             default:
                 break;

@@ -60,6 +60,9 @@ dependencies {
     implementation project(':baseDispose')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.github.GrenderG:Toasty:1.4.2'
+    implementation 'com.github.youngkaaa:circleview:0.1.0'
+    //动效
+    // implementation 'com.airbnb.android:lottie:3.0.7'
 
 }
 repositories {

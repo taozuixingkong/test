@@ -29,4 +29,14 @@ public class ExampleUnitTest {
             System.out.println("j="+j);
         }
     }
+    @Test
+    public void testZhuanyi() {
+        String ss ="2019-3-8_1.txt";
+        String[] segments = ss.split("\\.");
+        System.out.println("segments:"+segments[0]);
+        System.out.println("segments:"+segments.length);
+        String[] fileSegments = segments[0].split("\\_");
+        System.out.println("fileSegments:"+fileSegments[0]);
+        System.out.println("fileSegments:"+fileSegments.length);
+    }
 }
